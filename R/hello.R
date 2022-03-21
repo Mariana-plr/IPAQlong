@@ -23,6 +23,4 @@ library(testthat) # Unit Testing for R
 library(usethis) # Automate Package and Project Setup
 library(available)
 
-git remote add origin https://github.com/YOUR_USERNAME/REPOSITORY_NAME.git
-git commit -m "initial commit"
-git push -u origin master
+
