@@ -1,26 +1,28 @@
-#' @title IPAQlong
+#' @title IPAQ scores
 #'
 #' @description Calculates the continuous and categorical scores for the 'International Physical Activity Questionnaire (IPAQ)'
-#' long Form <http://www.ipaq.ki.se>
+#' long form.
 #'
-#' @param ipaqdata A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
-#' Yes/no replies should be categorized as yes-1, no-0. Time should be in minutes. Scores are only calculated for complete cases.
+#' @param data A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
+#' Yes/no replies should be coded as yes-1, no-0. Time should be in minutes.
 #'
 #' @param truncate Logical vector. If TRUE all walking, moderate and vigorous time variables are truncated following the IPAQ short rule.
-#' Variables exceeding 180 minutes are truncated to be equal to 180 minutes.
+#' Variables exceeding 180 minutes are truncated to be equal to 180 minutes. Default FALSE.
 #'
-#' @return A data frame object with the continuous and categorical scores. Continuous: metabolic equivalent of task (MET)/week,
-#' categorical: "low", "moderate", "high".
+#' @return A data frame object with the continuous (metabolic equivalent of task minutes (MET-min)/week) and categorical scores (low, moderate, high).
+#' Returns NA for cases with missing values.
+#' @importFrom dplyr case_when
+#' @importFrom stats complete.cases
 #'
 #' @export
 #'
+#'
 #' @references
-#' The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from (\url{http://www.ipaq.ki.se})
+#' The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from <https://sites.google.com/site/theipaq/home>
 #'
 #'
 
 ipaq_scores <- function(data, truncate= F){
-library(dplyr)
 
   if (length(names(data)) != 25) {
     stop("Number of columns needs to be 25")
@@ -28,7 +30,7 @@ library(dplyr)
 
   scores_data <- as.data.frame(data)
   scores_data[,1:25] <- lapply(scores_data[,1:25], as.numeric)
-  scores_data <- scores_data[which(complete.cases(scores_data)),]
+  scores_data <- scores_data[which(stats::complete.cases(scores_data)),]
 
   if (truncate== T) {
     for (i in c(7,13,21,5,11,15,17,19,25,3,23)){
@@ -114,7 +116,7 @@ library(dplyr)
   scores_data$activity_days_vig <- rowSums(scores_data[, c(2,22)], na.rm = T)
 
   scores_data$categories <- NA
-  scores_data[which(complete.cases(scores_data[, 1:25])), "categories"] <- case_when(c(scores_data[which(complete.cases(scores_data[, 1:25])),"activity_days_vig"]>=3
+  scores_data[which(complete.cases(scores_data[, 1:25])), "categories"] <- dplyr::case_when(c(scores_data[which(complete.cases(scores_data[, 1:25])),"activity_days_vig"]>=3
                                                                                         & scores_data[which(complete.cases(scores_data[, 1:25])),"continuous"]>= 1500)
                                                                                         | c(scores_data[which(complete.cases(scores_data[, 1:25])),"activity_days"]>=7
                                                                                             & scores_data[which(complete.cases(scores_data[, 1:25])),"continuous"]>= 3000) ~ "high",

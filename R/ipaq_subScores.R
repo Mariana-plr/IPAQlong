@@ -1,33 +1,33 @@
-#' @title IPAQlong
+#' @title IPAQ sub scores
 #'
 #' @description Calculates the domain and intensity sub scores for the 'International Physical Activity Questionnaire (IPAQ)'
-#' long Form <http://www.ipaq.ki.se>
+#' long form.
 #'
-#' @param ipaqdata A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
-#' Yes/no replies should be categorized as yes-1, no-0. Time should be in minutes. Sub scores are calculated for all cases, even when there are missing values.
+#' @param data A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
+#' Yes/no replies should be coded as yes-1, no-0. Time should be in minutes.
 #'
 #' @param truncate Logical vector. If TRUE all walking, moderate and vigorous time variables are truncated following the IPAQ short rule.
-#' Variables exceeding 180 minutes are truncated to be equal to 180 minutes.
+#' Variables exceeding 180 minutes are truncated to be equal to 180 minutes.Default FALSE.
 #'
-#' @return A data frame object with the domain and intensity sub scores in metabolic equivalent of task (MET)/week. Domain sub scores: work, transportation, domestic and leisure.
-#' Intensity sub scores: walking, moderate and vigorous.
+#' @return A data frame object with the domain (work, transportation, domestic, leisure) and intensity (walking, moderate, vigorous) sub scores in metabolic equivalent of task minutes (MET-min)/week.
+#' Sub scores are calculated for all cases, even in the presence of missing values.
 #'
 #' @export
 #'
+#' @importFrom stats complete.cases
+#'
 #' @references
-#' The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from (\url{http://www.ipaq.ki.se})
+#' The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from <https://sites.google.com/site/theipaq/home>
 #'
 #'
 ipaq_subScores <- function(data, truncate= F){
-library(dplyr)
-
 if (length(names(data)) != 25) {
   stop("Number of columns needs to be 25")
 }
 
 scores_data <- as.data.frame(data)
 scores_data[,1:25] <- lapply(scores_data[,1:25], as.numeric)
-scores_data <- scores_data[which(complete.cases(scores_data)),]
+scores_data <- scores_data[which(stats::complete.cases(scores_data)),]
 
 if (truncate== T) {
   for (i in c(7,13,21,5,11,15,17,19,25,3,23)){
