@@ -30,7 +30,7 @@ ipaq_scores <- function(data, truncate= F){
 
   scores_data <- as.data.frame(data)
   scores_data[,1:25] <- lapply(scores_data[,1:25], as.numeric)
-  scores_data <- scores_data[which(stats::complete.cases(scores_data)),]
+
 
   if (truncate== T) {
     for (i in c(7,13,21,5,11,15,17,19,25,3,23)){
@@ -129,9 +129,10 @@ ipaq_scores <- function(data, truncate= F){
                                                                                      T ~ "low")
 
   scores <- scores_data[,c("categories", "continuous")]
+  scores$categories <- as.factor(scores$categories)
 
 
-  return(scores)
+  invisible(scores)
 }
 
 

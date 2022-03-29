@@ -27,7 +27,7 @@ if (length(names(data)) != 25) {
 
 scores_data <- as.data.frame(data)
 scores_data[,1:25] <- lapply(scores_data[,1:25], as.numeric)
-scores_data <- scores_data[which(stats::complete.cases(scores_data)),]
+
 
 if (truncate== T) {
   for (i in c(7,13,21,5,11,15,17,19,25,3,23)){
@@ -106,5 +106,5 @@ scores_data$vigorous_total <- rowSums(scores_data[, c("w_vig", "l_vig")], na.rm 
 sub_scores <- scores_data[,c("work_total", "transportation_total", "domestic_total", "leisure_total", "walking_total", "moderate_total", "vigorous_total")]
 
 
-return(sub_scores)
+invisible(sub_scores)
 }
