@@ -2,25 +2,25 @@
 % Please edit documentation in R/ipaq_subScores.R
 \name{ipaq_subScores}
 \alias{ipaq_subScores}
-\title{IPAQlong}
+\title{IPAQ sub scores}
 \usage{
 ipaq_subScores(data, truncate = F)
 }
 \arguments{
-\item{truncate}{Logical vector. If TRUE all walking, moderate and vigorous time variables are truncated following the IPAQ short rule.
-Variables exceeding 180 minutes are truncated to be equal to 180 minutes.}
+\item{data}{A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
+Yes/no replies should be coded as yes-1, no-0. Time should be in minutes.}
 
-\item{ipaqdata}{A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
-Yes/no replies should be categorized as yes-1, no-0. Time should be in minutes. Sub scores are calculated for all cases, even when there are missing values.}
+\item{truncate}{Logical vector. If TRUE all walking, moderate and vigorous time variables are truncated following the IPAQ short rule.
+Variables exceeding 180 minutes are truncated to be equal to 180 minutes.Default FALSE.}
 }
 \value{
-A data frame object with the domain and intensity sub scores in metabolic equivalent of task (MET)/week. Domain sub scores: work, transportation, domestic and leisure.
-Intensity sub scores: walking, moderate and vigorous.
+A data frame object with the domain (work, transportation, domestic, leisure) and intensity (walking, moderate, vigorous) sub scores in metabolic equivalent of task minutes (MET-min)/week.
+Sub scores are calculated for all cases, even in the presence of missing values.
 }
 \description{
 Calculates the domain and intensity sub scores for the 'International Physical Activity Questionnaire (IPAQ)'
-long Form <http://www.ipaq.ki.se>
+long form.
 }
 \references{
-The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from (\url{http://www.ipaq.ki.se})
+The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from <https://sites.google.com/site/theipaq/home>
 }

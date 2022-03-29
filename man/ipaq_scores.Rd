@@ -2,25 +2,25 @@
 % Please edit documentation in R/ipaq_scores.R
 \name{ipaq_scores}
 \alias{ipaq_scores}
-\title{IPAQlong}
+\title{IPAQ scores}
 \usage{
 ipaq_scores(data, truncate = F)
 }
 \arguments{
-\item{truncate}{Logical vector. If TRUE all walking, moderate and vigorous time variables are truncated following the IPAQ short rule.
-Variables exceeding 180 minutes are truncated to be equal to 180 minutes.}
+\item{data}{A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
+Yes/no replies should be coded as yes-1, no-0. Time should be in minutes.}
 
-\item{ipaqdata}{A data frame object containing 25 columns with the replies to the IPAQ long format (parts 1-4).
-Yes/no replies should be categorized as yes-1, no-0. Time should be in minutes. Scores are only calculated for complete cases.}
+\item{truncate}{Logical vector. If TRUE all walking, moderate and vigorous time variables are truncated following the IPAQ short rule.
+Variables exceeding 180 minutes are truncated to be equal to 180 minutes. Default FALSE.}
 }
 \value{
-A data frame object with the continuous and categorical scores. Continuous: metabolic equivalent of task (MET)/week,
-categorical: "low", "moderate", "high".
+A data frame object with the continuous (metabolic equivalent of task minutes (MET-min)/week) and categorical scores (low, moderate, high).
+Returns NA for cases with missing values.
 }
 \description{
 Calculates the continuous and categorical scores for the 'International Physical Activity Questionnaire (IPAQ)'
-long Form <http://www.ipaq.ki.se>
+long form.
 }
 \references{
-The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from (\url{http://www.ipaq.ki.se})
+The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from <https://sites.google.com/site/theipaq/home>
 }

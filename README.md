@@ -16,7 +16,7 @@ Guidelines for Data Processing and Analysis of the International
 Physical Activity Questionnaire.
 
 The IPAQ Research Committee also recommends guidelines for data
-processing before computing the scores. These includede data cleaning,
+processing before computing the scores. These include data cleaning,
 truncation rules as well as how to deal with outliers. Please read these
 guidelines before using IPAQlong.
 
