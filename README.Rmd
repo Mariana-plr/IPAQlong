@@ -32,6 +32,10 @@ You can install the development version of IPAQlong from [GitHub](https://github
 devtools::install_github("Mariana-plr/IPAQlong")
 ```
 
+## Citation
+
+[![DOI](https://zenodo.org/badge/471093506.svg)](https://zenodo.org/badge/latestdoi/471093506)
+
 ## References
 
 The IPAQ Group (2005). Guidelines for Data Processing and Analysis of the International Physical Activity Questionnaire. Retrieved from <https://sites.google.com/site/theipaq/home>

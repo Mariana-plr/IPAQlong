@@ -30,6 +30,10 @@ You can install the development version of IPAQlong from
 devtools::install_github("Mariana-plr/IPAQlong")
 ```
 
+## Citation
+
+[![DOI](https://zenodo.org/badge/471093506.svg)](https://zenodo.org/badge/latestdoi/471093506)
+
 ## References
 
 The IPAQ Group (2005). Guidelines for Data Processing and Analysis of
