@@ -30,7 +30,7 @@ You can install the development version of IPAQlong from
 devtools::install_github("Mariana-plr/IPAQlong")
 ```
 
-## Citation
+## Cite this package
 
 If you use IPAQlong in a project that leads to a publication please cite
 it:
