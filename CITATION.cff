@@ -2,7 +2,7 @@
 # CITATION file created with {cffr} R package, v0.2.1
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
- 
+
 cff-version: 1.2.0
 message: 'To cite package "IPAQlong" in publications use:'
 type: software
@@ -10,6 +10,7 @@ license: MIT
 title: 'IPAQlong: Calculates the Scores for the ‘International Physical Activity Questionnaire
   (IPAQ)’ Long Form'
 version: 0.1.0
+doi: 10.5281/zenodo.6395010
 abstract: Calculates the scores for the 'International Physical Activity Questionnaire
   (IPAQ)' long form, based on the "Guidelines for the data processing and analysis
   of the IPAQ" <https://sites.google.com/site/theipaq/home>.
@@ -17,6 +18,7 @@ authors:
 - family-names: Ponce-de-Leon
   given-names: Mariana
   email: mariana.ponce-de-leon@outlook.com
+  orcid: https://orcid.org/0000-0002-3636-6499
 preferred-citation:
   type: manual
   title: 'IPAQlong: Calculates the Scores for the ‘International Physical Activity
@@ -35,6 +37,7 @@ preferred-citation:
     email: mariana.ponce-de-leon@outlook.com
   license: MIT
   year: '2022'
+repository: https://github.com/Mariana-plr/IPAQlong
 contact:
 - family-names: Ponce-de-Leon
   given-names: Mariana
