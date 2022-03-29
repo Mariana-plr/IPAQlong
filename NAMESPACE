@@ -2,3 +2,5 @@
 
 export(ipaq_scores)
 export(ipaq_subScores)
+importFrom(dplyr,case_when)
+importFrom(stats,complete.cases)
