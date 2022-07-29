@@ -38,13 +38,13 @@ ipaq_scores <- function(data, truncate= F){
     }
   }
 
-  else {
+
     scores_data$total_walk <- rowSums(scores_data[, c(7,13,21)], na.rm = T)
     scores_data$total_mod <- rowSums(scores_data[, c(5,11,15,17,19,25)], na.rm = T)
     scores_data$total_vig <- rowSums(scores_data[, c(3,23)], na.rm = T)
     scores_data$total_min <- rowSums(scores_data[, c("total_walk", "total_mod", "total_vig")], na.rm = T)
     scores_data$total_mod_walk <- rowSums(scores_data[, c("total_walk", "total_mod")], na.rm = T)
-  }
+
 
   #work
 
@@ -123,7 +123,7 @@ ipaq_scores <- function(data, truncate= F){
                                                                                      c(scores_data[which(complete.cases(scores_data[, 1:25])),"activity_days_vig"]>=3
                                                                                         & scores_data[which(complete.cases(scores_data[, 1:25])),"total_vig"]>=20)
                                                                                         | c(scores_data[which(complete.cases(scores_data[, 1:25])),"activity_days_walk_mod"]>=5
-                                                                                            & scores_data[which(complete.cases(scores_data[, 1:25])),"total_mod_walk"]>=30 )
+                                                                                            & scores_data[which(complete.cases(scores_data[, 1:25])),"total_mod_walk"]>=30)
                                                                                         | c(scores_data[which(complete.cases(scores_data[, 1:25])),"activity_days"]>=5
                                                                                             & scores_data[which(complete.cases(scores_data[, 1:25])),"continuous"]>= 600)~ "medium",
                                                                                      T ~ "low")

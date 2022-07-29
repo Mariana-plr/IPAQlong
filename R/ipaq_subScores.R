@@ -35,13 +35,12 @@ if (truncate== T) {
   }
 }
 
-else {
   scores_data$total_walk <- rowSums(scores_data[, c(7,13,21)], na.rm = T)
   scores_data$total_mod <- rowSums(scores_data[, c(5,11,15,17,19,25)], na.rm = T)
   scores_data$total_vig <- rowSums(scores_data[, c(3,23)], na.rm = T)
   scores_data$total_min <- rowSums(scores_data[, c("total_walk", "total_mod", "total_vig")], na.rm = T)
   scores_data$total_mod_walk <- rowSums(scores_data[, c("total_walk", "total_mod")], na.rm = T)
-}
+
 
 #work
 
