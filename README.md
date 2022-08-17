@@ -37,8 +37,8 @@ it:
 
 Ponce-de-Leon, M. (2022). IPAQlong: Calculates the Scores for the
 ‘International Physical Activity Questionnaire (IPAQ)’ Long Form
-(Version 0.1.0) \[Computer software\].
-<https://doi.org/10.5281/zenodo.6395010>
+(Version 0.1.2) \[Computer software\].
+<https://doi.org/10.5281/zenodo.6940442>
 
 [![DOI](https://zenodo.org/badge/471093506.svg)](https://zenodo.org/badge/latestdoi/471093506)
 
