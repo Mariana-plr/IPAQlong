@@ -10,7 +10,7 @@ license: MIT
 title: 'IPAQlong: Calculates the Scores for the ‘International Physical Activity Questionnaire
   (IPAQ)’ Long Form'
 version: 0.1.0
-doi: 10.5281/zenodo.6395010
+doi: 10.5281/zenodo.6940442
 abstract: Calculates the scores for the 'International Physical Activity Questionnaire
   (IPAQ)' long form, based on the "Guidelines for the data processing and analysis
   of the IPAQ" <https://sites.google.com/site/theipaq/home>.
