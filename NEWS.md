@@ -2,6 +2,8 @@
 
 * Added a `NEWS.md` file to track changes to the package.
 
+* Added example
+
 ## Bug fixes
 
 * Fixed error when "truncate = T"" while using ipaq_scores and ipaq_subScores functions.
