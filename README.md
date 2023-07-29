@@ -32,7 +32,7 @@ devtools::install_github("Mariana-plr/IPAQlong")
 
 ## How to use it
 
-See example.R file for more information
+See [example.R](example.R) file for more information
 
 ## Cite this package
 
